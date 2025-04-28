@@ -1,6 +1,9 @@
-# Boilerplate MVC em Node.js com PostgreSQL
+# Filmeet - Plataforma de Eventos com MVC e Supabase 
 
-Este projeto é um boilerplate básico para uma aplicação Node.js seguindo o padrão MVC (Model-View-Controller), utilizando PostgreSQL como banco de dados.
+
+Este projeto é uma plataforma de eventos com o foco em eventos de filmes como cinema drive ins, meet and greets ou eventos que atores famosos vão estar. 
+
+Ele utiliza Node.js seguindo o padrão MVC e PostgreSQL como banco de dados.
 
 ## Requisitos
 
@@ -12,8 +15,8 @@ Este projeto é um boilerplate básico para uma aplicação Node.js seguindo o p
 1. **Clonar o repositório:**
 
 ```bash
-   git clone https://github.com/seu-usuario/seu-projeto.git
-   cd seu-projeto
+   git clone https://github.com/antoniodicillo/INTELI_M2
+   cd INTELI_M2
 ```
 
 2. **Instalar as dependências:**
@@ -22,35 +25,11 @@ Este projeto é um boilerplate básico para uma aplicação Node.js seguindo o p
 npm install
 ```
     
-3. **Configurar o arquivo `.env`:**
-    
-Renomeie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente necessárias, como as configurações do banco de dados PostgreSQL.
-    
+3. **Executar o Projeto**
 
-Configuração do Banco de Dados
-------------------------------
-
-1. **Criar banco de dados:**
-    
-    Crie um banco de dados PostgreSQL com o nome especificado no seu arquivo `.env`.
-    
-2. **Executar o script SQL de inicialização:**
-    
 ```bash
-npm run init-db
+npm start
 ```
-    
-Isso criará a tabela `users` no seu banco de dados PostgreSQL com UUID como chave primária e inserirá alguns registros de exemplo.
-    
-
-Funcionalidades
----------------
-
-* **Padrão MVC:** Estrutura organizada em Model, View e Controller.
-* **PostgreSQL:** Banco de dados relacional utilizado para persistência dos dados.
-* **UUID:** Utilização de UUID como chave primária na tabela `users`.
-* **Scripts com `nodemon`:** Utilização do `nodemon` para reiniciar automaticamente o servidor após alterações no código.
-* **Testes:** Inclui estrutura básica para testes automatizados.
 
 Scripts Disponíveis
 -------------------
@@ -63,21 +42,39 @@ Scripts Disponíveis
 Estrutura de Diretórios
 -----------------------
 
-* **`config/`**: Configurações do banco de dados e outras configurações do projeto.
-* **`controllers/`**: Controladores da aplicação (lógica de negócio).
-* **`models/`**: Modelos da aplicação (definições de dados e interações com o banco de dados).
-* **`routes/`**: Rotas da aplicação.
-* **`tests/`**: Testes automatizados.
-* **`views/`**: Views da aplicação (se aplicável).
+```
+INTELI_M2/
+│
+├── config/                # Arquivos de configuração
+│   └── database.js
+├── controllers/           # Lógica de controle das requisições
+│   └── HomeController.js
+├── docs/           # Documentação WAD
+│   └── wad.md
+├── models/                # Definição de modelos de dados 
+│   └── User.js
+├── routes/                # Definição das rotas do sistema
+│   └── index.js
+├── services/              # Serviços auxiliares do sistema
+│   └── userService.js
+├── assets/                # Arquivos públicos como imagens e fontes
+│   └── modelo-banco.pdf
+├── scripts/               # Arquivos de JavaScript públicos
+├── styles/                # Arquivos CSS públicos
+├── tests/                 # Arquivos de testes unitários
+│   └── example.test.js
+├── .gitignore             # Arquivo para ignorar arquivos no Git
+├── .env.example           # Arquivo de exemplo para variáveis de ambiente
+├── jest.config.js         # Arquivo de configuração do Jest
+├── package-lock.json      # Gerenciador de dependências do Node.js
+├── package.json           # Gerenciador de dependências do Node.js
+├── readme.md              # Documentação do projeto (Markdown)
+├── server.js              # Arquivo principal que inicializa o servidor
+└── rest.http              # Teste de endpoints 
 
-Contribuição
-------------
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir um issue ou enviar um pull request.
+```
 
 Licença
 -------
 
 Este projeto está licenciado sob a Licença MIT.
-
-Este README.md fornece uma visão geral clara do boilerplate, incluindo instruções de instalação, configuração do banco de dados, funcionalidades principais, scripts disponíveis, estrutura de diretórios, como contribuir e informações de licença. Certifique-se de personalizar as seções com detalhes específicos do seu projeto conforme necessário.
