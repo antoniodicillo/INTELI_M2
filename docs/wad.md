@@ -31,7 +31,13 @@
 
 # <a name="c1"></a>1. Introdução 
 
+**Web App Document (WAD) – Filmeet**  
 
+O Filmeet é uma plataforma web desenvolvida para conectar fãs de cinema a eventos exclusivos, como exibições em drive-ins, encontros com atores e sessões especiais. Construído com arquitetura MVC e utilizando Supabase para banco de dados e autenticação, o projeto oferece uma solução escalável e segura para a descoberta e gestão de eventos cinematográficos.  
+
+Com a crescente demanda por experiências interativas no universo do entretenimento, o Filmeet surge como uma ferramenta centralizada, permitindo que usuários encontrem eventos relevantes, realizem inscrições e interajam com outros fãs. A aplicação prioriza uma experiência intuitiva, garantindo acesso rápido e responsivo em diferentes dispositivos.  
+
+Além de facilitar a conexão entre organizadores e participantes, o sistema integra recursos como recomendações personalizadas, notificações em tempo real e avaliações pós-evento, fortalecendo a comunidade cinematográfica. O Filmeet não apenas simplifica o acesso a experiências exclusivas, mas também se posiciona como um hub digital para fãs que buscam ir além da experiência tradicional de cinema.
 
 # <a name="c2"></a>2. Visão Geral da Aplicação Web (sprint 1)
 
