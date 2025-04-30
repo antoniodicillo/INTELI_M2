@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title><%= titulo %></title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-  <%- include('../partials/header') %>
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= titulo %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="flex m-auto flex-col h-full">
+    <%- include('../partials/header') %>
 
-  <main class="container">
-    <h1><%= mensagem %></h1>
-    <p>Este site foi desenvolvido para eu entender MVC.</p>
-  </main>
+    <main class="container w-4/6 m-auto mb-auto flex-grow">
+      <h1 class="text-2xl"><%= mensagem %></h1>
+      <p class="text-blue-500">
+        Este site foi desenvolvido para eu entender MVC.
+      </p>
+    </main>
 
-  <%- include('../partials/footer') %>
-</body>
+    <%- include('../partials/footer') %>
+  </body>
 </html>
