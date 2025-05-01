@@ -13,15 +13,11 @@
   </head>
   <body class="flex m-auto flex-col h-full">
     <%- include('../partials/header') %>
-    
-    <%- include('../partials/home_Search') %>
 
-    <main class="container w-4/6 m-auto mb-auto flex-grow">
-      <h1 class="text-2xl"><%= mensagem %></h1>
-      <p class="text-blue-500">
-        Este site foi desenvolvido para eu entender MVC.
-      </p>
-    </main>
+    <%- include('../partials/home_search') %>
+
+    <%- include('../partials/event_horizontal_list') %>
+    
 
     <%- include('../partials/footer') %>
   </body>
