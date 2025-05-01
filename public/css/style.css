@@ -535,29 +535,29 @@ video {
 .absolute {
   position: absolute;
 }
-.relative {
-  position: relative;
-}
 .bottom-0 {
   bottom: 0px;
-}
-.left-1\/2 {
-  left: 50%;
 }
 .m-auto {
   margin: auto;
 }
-.mb-8 {
-  margin-bottom: 2rem;
+.mb-0 {
+  margin-bottom: 0px;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 .mb-auto {
   margin-bottom: auto;
 }
+.me-1 {
+  margin-inline-end: 0.25rem;
+}
 .me-4 {
   margin-inline-end: 1rem;
 }
-.mt-auto {
-  margin-top: auto;
+.mt-10 {
+  margin-top: 2.5rem;
 }
 .flex {
   display: flex;
@@ -565,17 +565,14 @@ video {
 .h-16 {
   height: 4rem;
 }
-.h-full {
-  height: 100%;
-}
-.h-auto {
-  height: auto;
-}
 .h-2 {
   height: 0.5rem;
 }
-.h-8 {
-  height: 2rem;
+.h-48 {
+  height: 12rem;
+}
+.h-full {
+  height: 100%;
 }
 .w-4\/6 {
   width: 66.666667%;
@@ -585,13 +582,6 @@ video {
 }
 .flex-grow {
   flex-grow: 1;
-}
-.-translate-x-1\/2 {
-  --tw-translate-x: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .flex-row {
   flex-direction: row;
@@ -608,16 +598,30 @@ video {
 .justify-center {
   justify-content: center;
 }
-.self-center {
-  align-self: center;
-}
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 .bg-darkBlue {
   --tw-bg-opacity: 1;
   background-color: rgb(2 43 58 / var(--tw-bg-opacity, 1));
+}
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+.bg-\[url\(\'\/images\/backdrops\/mainBanner\.png\'\)\] {
+  background-image: url('/images/backdrops/mainBanner.png');
+}
+.from-darkBlue {
+  --tw-gradient-from: #022B3A var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(2 43 58 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.to-lightBlue {
+  --tw-gradient-to: #BFDBF7 var(--tw-gradient-to-position);
+}
+.p-5 {
+  padding: 1.25rem;
 }
 .text-center {
   text-align: center;
@@ -640,4 +644,12 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.underline {
+  text-decoration-line: underline;
+}
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
