@@ -1,4 +1,33 @@
+<!-- <script>
+  const url =
+    "https://api.themoviedb.org/3/search/movie?query=dark%20knight%20rises&include_adult=false&language=en-US&page=1";
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer ",
+    },
+  };
+
+  fetch(url, options)
+    .then((res) => res.json())
+    .then((json) => console.log(json))
+    .catch((err) => console.error(err));
+</script> 
+-->
+
 <!-- Rodapé fixo -->
-<footer>
-    <p>&copy; 2025 - Projeto Educacional com Node.js</p>
-  </footer>
+<footer class="">
+  <div class="w-full flex justify-center items-center h-20 m-auto bg-darkBlue">
+    <div
+      class="text-center text-white flex flex-col items-center justify-center"
+    >
+      <p>&copy; 2025 - Projeto Educacional com Node.js</p>
+      <div class="flex flex-row">
+        <p class="me-1">Dados relacionados a filmes de</p>
+        <a href="https://www.themoviedb.org/" class="underline"> TMDB</a>
+      </div>
+    </div>
+  </div>
+</footer>
