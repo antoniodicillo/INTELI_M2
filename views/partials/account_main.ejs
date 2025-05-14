@@ -1,0 +1,69 @@
+<div class="flex flex-row w-4/6 m-auto">
+  <%- include('./account_categories') %> <% if(aba === "account") { %>
+  <div class="w-3/4 bg-white ms-4 h-96 rounded">
+    <div class="w-5/6 m-auto">
+      <h1 class="mt-14 m-auto text-5xl font-semibold">Conta</h1>
+      <div>
+        <h1 class="mt-14 text-2xl">Informações Públicas</h1>
+        <div class="bg-veryLightBlue h-0.5"></div>
+        <div class="flex justify-between mt-4">
+          <div class="w-1/4 me-12">
+            <p>
+              Informações que podem ser vistas por qualquer um no seu perfil
+            </p>
+          </div>
+          <!-- FORM -->
+          <form class="flex flex-col w-3/4">
+             <!-- COLUNA 1 -->
+            <div class="flex justify-end ">
+              <div class="me-4">
+                <p class="font-semibold">NOME</p>
+                <input
+                  type="text"
+                  class="w-40 h-10 p-3 rounded-lg bg-lightBlue/25 border-2 border-lightBlue/25 focus:border-mediumBlue focus:outline-none focus:ring-1 focus:ring-darkBlue"
+                />
+              </div>
+              <div>
+                <p class="font-semibold">SOBRENOME</p>
+                <input
+                  type="text"
+                  class="w-56 h-10 p-3 rounded-lg bg-lightBlue/25 border-2 border-lightBlue/25 focus:border-mediumBlue focus:outline-none focus:ring-1 focus:ring-darkBlue"
+                />
+              </div>
+            </div>
+              <!-- COLUNA 2 -->
+              <div class="flex flex-col items-end ">
+                <div class="me-4">
+                  <p class="font-semibold">NOME</p>
+                  <input
+                    type="text"
+                    class="w-40 h-10 p-3 rounded-lg bg-lightBlue/25 border-2 border-lightBlue/25 focus:border-mediumBlue focus:outline-none focus:ring-1 focus:ring-darkBlue"
+                  />
+                </div>
+                <div>
+                  <p class="font-semibold">SOBRENOME</p>
+                  <input
+                    type="text"
+                    class="w-56 h-10 p-3 rounded-lg bg-lightBlue/25 border-2 border-lightBlue/25 focus:border-mediumBlue focus:outline-none focus:ring-1 focus:ring-darkBlue"
+                  />
+                </div>
+            </div>
+          </form>
+          
+          </div>
+      </div>
+    </div>
+  </div>
+  <% } else if(aba === "events") { %>
+  <div class="w-3/4 bg-white ms-4 h-96 rounded">
+    <div class="w-5/6 m-auto">
+      <h1 class="mt-14 m-auto text-5xl font-semibold">Eventos</h1>
+      <div>
+        <h1 class="mt-14 text-2xl">Informações Públicas</h1>
+        <div class="bg-veryLightBlue h-0.5"></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</div>

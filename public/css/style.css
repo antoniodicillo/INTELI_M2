@@ -514,6 +514,9 @@ video {
 .m-auto {
   margin: auto;
 }
+.m-3 {
+  margin: 0.75rem;
+}
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -529,6 +532,9 @@ video {
 .mb-4 {
   margin-bottom: 1rem;
 }
+.mb-8 {
+  margin-bottom: 2rem;
+}
 .me-1 {
   margin-inline-end: 0.25rem;
 }
@@ -541,11 +547,26 @@ video {
 .me-8 {
   margin-inline-end: 2rem;
 }
+.ms-4 {
+  margin-inline-start: 1rem;
+}
+.mt-14 {
+  margin-top: 3.5rem;
+}
 .mt-4 {
   margin-top: 1rem;
 }
 .mt-8 {
   margin-top: 2rem;
+}
+.ms-16 {
+  margin-inline-start: 4rem;
+}
+.me-24 {
+  margin-inline-end: 6rem;
+}
+.me-12 {
+  margin-inline-end: 3rem;
 }
 .line-clamp-6 {
   overflow: hidden;
@@ -558,6 +579,12 @@ video {
 }
 .flex {
   display: flex;
+}
+.h-0\.5 {
+  height: 0.125rem;
+}
+.h-10 {
+  height: 2.5rem;
 }
 .h-16 {
   height: 4rem;
@@ -577,8 +604,14 @@ video {
 .h-8 {
   height: 2rem;
 }
+.h-96 {
+  height: 24rem;
+}
 .h-full {
   height: 100%;
+}
+.w-1\/4 {
+  width: 25%;
 }
 .w-2\/6 {
   width: 33.333333%;
@@ -586,14 +619,35 @@ video {
 .w-28 {
   width: 7rem;
 }
+.w-3\/4 {
+  width: 75%;
+}
 .w-4\/6 {
   width: 66.666667%;
 }
 .w-5 {
   width: 1.25rem;
 }
+.w-5\/6 {
+  width: 83.333333%;
+}
+.w-8 {
+  width: 2rem;
+}
 .w-full {
   width: 100%;
+}
+.w-96 {
+  width: 24rem;
+}
+.w-36 {
+  width: 9rem;
+}
+.w-40 {
+  width: 10rem;
+}
+.w-56 {
+  width: 14rem;
 }
 .flex-grow {
   flex-grow: 1;
@@ -610,8 +664,23 @@ video {
 .items-center {
   align-items: center;
 }
+.justify-end {
+  justify-content: flex-end;
+}
 .justify-center {
   justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+.justify-items-end {
+  justify-items: end;
 }
 .self-center {
   align-self: center;
@@ -621,6 +690,9 @@ video {
 }
 .text-ellipsis {
   text-overflow: ellipsis;
+}
+.rounded {
+  border-radius: 0.25rem;
 }
 .rounded-full {
   border-radius: 9999px;
@@ -642,6 +714,9 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
 }
+.border-lightBlue\/25 {
+  border-color: rgb(191 219 247 / 0.25);
+}
 .bg-darkBlue {
   --tw-bg-opacity: 1;
   background-color: rgb(2 43 58 / var(--tw-bg-opacity, 1));
@@ -653,6 +728,20 @@ video {
 .bg-mediumBlue {
   --tw-bg-opacity: 1;
   background-color: rgb(31 122 140 / var(--tw-bg-opacity, 1));
+}
+.bg-mediumBlue\/25 {
+  background-color: rgb(31 122 140 / 0.25);
+}
+.bg-veryLightBlue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 229 242 / var(--tw-bg-opacity, 1));
+}
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+.bg-lightBlue\/25 {
+  background-color: rgb(191 219 247 / 0.25);
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
@@ -705,6 +794,14 @@ video {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 .text-lg {
   font-size: 1.125rem;
@@ -767,9 +864,30 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity, 1));
 }
+.focus\:border-darkBlue:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(2 43 58 / var(--tw-border-opacity, 1));
+}
+.focus\:border-mediumBlue:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(31 122 140 / var(--tw-border-opacity, 1));
+}
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.focus\:ring-1:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
 .focus\:ring-blue-500:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity, 1));
+}
+.focus\:ring-darkBlue:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(2 43 58 / var(--tw-ring-opacity, 1));
 }
 @media (prefers-color-scheme: dark) {
 
