@@ -4,6 +4,7 @@ const path = require('path');
 const alunosRoutes = require('./routes/alunos');
 const bodyParser = require('body-parser');
 const cursosRoutes = require('./routes/cursos');
+const professoresRoutes = require('./routes/professores');
 require('dotenv').config();
 
 app.set('view engine', 'ejs');
@@ -14,6 +15,7 @@ app.use(express.static('public'));
 
 app.use('/alunos', alunosRoutes);
 app.use('/cursos', cursosRoutes);
+app.use('/professores', professoresRoutes);
 
 app.get('/', (req, res) => {
   res.redirect('/alunos');

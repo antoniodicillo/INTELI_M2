@@ -13,9 +13,9 @@ module.exports = {
   },
 
   async update(id, data) {
-    const query = 'UPDATE aluno SET nome = $1, email = $2, curso_id = $3 WHERE id = $4';
+    const query = 'UPDATE aluno SET nome = $1, email = $2 WHERE id = $3';
     console.log(data.curso_id)
-    const values = [data.nome, data.email, data.curso_id, id];
+    const values = [data.nome, data.email, id];
     return db.query(query, values);
   },
 
