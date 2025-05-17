@@ -45,13 +45,16 @@ _Posicione aqui a lista de User Stories levantadas para o projeto. Siga o templa
 <img src="../assets/database/modelo-banco.png">
 
 ```sql
+
+-- Tabela de cargos dos usuários do sistema
 CREATE TABLE roles (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
-  create_Events BOOLEAN,
-  ban_Members BOOLEAN
+  create_Events BOOLEAN, -- Booleana de poder ou não criar eventos no site
+  ban_Members BOOLEAN -- Booleana de poder bloquear o acesso a plataforma para certos usuários
 );
 
+-- Tabela dos usuários do sistema
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
@@ -59,6 +62,7 @@ CREATE TABLE users (
   created_at DATE 
 );
 
+-- Tabela de eventos 
 CREATE TABLE events (
  id SERIAL PRIMARY KEY,
  title TEXT,
@@ -68,6 +72,7 @@ CREATE TABLE events (
  host INT REFERENCES users(id) ON DELETE CASCADE
 );
 
+-- Tabela de eventos que um usuário confirmou sua presença
 CREATE TABLE subscriptions (
   id SERIAL PRIMARY KEY,
   user_id INT REFERENCES users(id) ON DELETE CASCADE,

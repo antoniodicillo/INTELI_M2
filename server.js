@@ -2,7 +2,11 @@ const express = require('express');
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
+const homeRoutes = require('./routes/home');
+const accountRoutes = require('./routes/account');
+const eventRoutes = require('./routes/event');
 
 // Middleware para processar JSON
 app.use(express.json());
@@ -15,12 +19,20 @@ app.set("views", path.join(__dirname, "views"));
 
 // Define a pasta pública com CSS e outros arquivos estáticos
 app.use(express.static(path.join(__dirname, "assets")));
+app.use(express.static(path.join(__dirname, "styles")));
 
-// Rotas
-const routes = require('./routes/index');
-app.use('/', routes);
+app.get("/", (req, res) => {
+  res.redirect('/home');
+});
+
+// Define as rotas
+app.use('/home', homeRoutes);
+app.use('/account', accountRoutes);
+app.use('/event', eventRoutes);
 
 // Inicializa o servidor
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`); 
+  console.log(`Servidor rodando na porta ${PORT}`);
+  require('child_process').exec(`start http://localhost:${PORT}`); // Abre o navegador automaticamente
 });
+

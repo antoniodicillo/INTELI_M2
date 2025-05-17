@@ -5,16 +5,17 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "concurrently \"nodemon app.js\" \"postcss public/css/tailwind.css -o public/css/style.css --watch\"",
+    "dev": "concurrently \"nodemon app.js\" \"postcss styles/tailwind.css -o styles/style.css --watch\"",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "init-db": "node scripts/runSQLScript.js",
-    "tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css --watch",
+    "tailwind:css": "postcss styles/tailwind.css -o styles/style.css --watch",
     "migrate": "node migrations/migrate.js"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.5",
     "autoprefixer": "^10.4.21",
+    "body-parser": "^2.2.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
