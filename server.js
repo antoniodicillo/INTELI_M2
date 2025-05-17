@@ -14,7 +14,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // Define a pasta pública com CSS e outros arquivos estáticos
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "assets")));
 
 // Rotas
 const routes = require('./routes/index');
@@ -24,4 +24,3 @@ app.use('/', routes);
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`); 
 });
-

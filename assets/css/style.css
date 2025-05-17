@@ -514,9 +514,6 @@ video {
 .m-auto {
   margin: auto;
 }
-.m-3 {
-  margin: 0.75rem;
-}
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -538,6 +535,9 @@ video {
 .me-1 {
   margin-inline-end: 0.25rem;
 }
+.me-12 {
+  margin-inline-end: 3rem;
+}
 .me-2 {
   margin-inline-end: 0.5rem;
 }
@@ -558,15 +558,6 @@ video {
 }
 .mt-8 {
   margin-top: 2rem;
-}
-.ms-16 {
-  margin-inline-start: 4rem;
-}
-.me-24 {
-  margin-inline-end: 6rem;
-}
-.me-12 {
-  margin-inline-end: 3rem;
 }
 .line-clamp-6 {
   overflow: hidden;
@@ -625,29 +616,23 @@ video {
 .w-4\/6 {
   width: 66.666667%;
 }
+.w-40 {
+  width: 10rem;
+}
 .w-5 {
   width: 1.25rem;
 }
 .w-5\/6 {
   width: 83.333333%;
 }
+.w-56 {
+  width: 14rem;
+}
 .w-8 {
   width: 2rem;
 }
 .w-full {
   width: 100%;
-}
-.w-96 {
-  width: 24rem;
-}
-.w-36 {
-  width: 9rem;
-}
-.w-40 {
-  width: 10rem;
-}
-.w-56 {
-  width: 14rem;
 }
 .flex-grow {
   flex-grow: 1;
@@ -672,15 +657,6 @@ video {
 }
 .justify-between {
   justify-content: space-between;
-}
-.justify-around {
-  justify-content: space-around;
-}
-.justify-evenly {
-  justify-content: space-evenly;
-}
-.justify-items-end {
-  justify-items: end;
 }
 .self-center {
   align-self: center;
@@ -725,6 +701,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
 }
+.bg-lightBlue\/25 {
+  background-color: rgb(191 219 247 / 0.25);
+}
 .bg-mediumBlue {
   --tw-bg-opacity: 1;
   background-color: rgb(31 122 140 / var(--tw-bg-opacity, 1));
@@ -739,9 +718,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-.bg-lightBlue\/25 {
-  background-color: rgb(191 219 247 / 0.25);
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
@@ -863,10 +839,6 @@ video {
 .focus\:border-blue-500:focus {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity, 1));
-}
-.focus\:border-darkBlue:focus {
-  --tw-border-opacity: 1;
-  border-color: rgb(2 43 58 / var(--tw-border-opacity, 1));
 }
 .focus\:border-mediumBlue:focus {
   --tw-border-opacity: 1;
