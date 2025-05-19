@@ -9,6 +9,7 @@ const accountRoutes = require('./routes/account');
 const eventRoutes = require('./routes/event');
 const loginRoutes = require('./routes/login');
 const signupRoutes = require('./routes/signup');
+const eventsApiRoutes = require('./routes/events');
 
 // Middleware para processar JSON
 app.use(express.json());
@@ -33,6 +34,7 @@ app.use('/account', accountRoutes);
 app.use('/event', eventRoutes);
 app.use('/login', loginRoutes);
 app.use('/signup', signupRoutes);
+app.use('/events', eventsApiRoutes);
 
 // Inicializa o servidor
 app.listen(PORT, () => {

@@ -1,105 +1,47 @@
-<div class="flex flex-row w-4/6 m-auto mt-0">
-  <!-- ABA DA CONTA -->
-  <%- include('./account_categories') %> <% if(aba === "account") { %>
-  <div class="bg-white ms-4 rounded w-full">
+<div class="flex flex-row w-4/6 m-auto mt-8">
+  <div class="bg-white rounded w-full">
     <div class="ms-8 me-8 m-auto">
-      <h1 class="mt-4 m-auto text-4xl font-semibold">Conta</h1>
-      <div>
-        <h1 class="mt-14 text-2xl">Informações Públicas</h1>
-        <div class="bg-veryLightBlue h-0.5"></div>
-        <div class="flex justify-between mt-4">
-          <div class="w-1/4 me-12">
-            <p>
-              Informações que podem ser vistas por qualquer um no seu perfil
-            </p>
+      <h1 class="mt-4 m-auto text-4xl font-semibold mb-14">Criar evento</h1>
+      <form class="flex flex-col" action="/events" method="POST">
+        <div class="flex flex-row">
+          <div class="me-4 w-1/2">
+            <p class="font-semibold">TÍTULO</p>
+            <input
+              name="title"
+              type="text"
+              class="w-full h-10 p-3 rounded-lg bg-lightBlue/25 border-2 border-lightBlue/25 focus:border-mediumBlue focus:outline-none focus:ring-1 focus:ring-darkBlue"
+              required
+              />
           </div>
-          <!-- FORM -->
-          <form class="flex flex-col mb-8">
-            <!-- COLUNA 1 -->
-            <div class="flex justify-end">
-              <div class="me-4">
-                <p class="font-semibold">NOME</p>
-                <input
-                  type="text"
-                  class="w-40 h-10 p-3 rounded-lg bg-lightBlue/25 border-2 border-lightBlue/25 focus:border-mediumBlue focus:outline-none focus:ring-1 focus:ring-darkBlue"
-                />
-              </div>
-              <div>
-                <p class="font-semibold">SOBRENOME</p>
-                <input
-                  type="text"
-                  class="w-56 h-10 p-3 rounded-lg bg-lightBlue/25 border-2 border-lightBlue/25 focus:border-mediumBlue focus:outline-none focus:ring-1 focus:ring-darkBlue"
-                />
-              </div>
-            </div>
-            <!-- COLUNA 1 -->
-            <div class="flex justify-start">
-              <div>
-                <p class="font-semibold">EMAIL</p>
-                <input
-                  type="text"
-                  class="w-56 h-10 p-3 rounded-lg bg-lightBlue/25 border-2 border-lightBlue/25 focus:border-mediumBlue focus:outline-none focus:ring-1 focus:ring-darkBlue"
-                />
-              </div>
-              <div></div>
-            </div>
-          </form>
+          <div class="me-4">
+            <p class="font-semibold">DATA</p>
+            <input
+              name="date"
+              type="date"
+              class="w-40 h-10 p-3 rounded-lg bg-lightBlue/25 border-2 border-lightBlue/25 focus:border-mediumBlue focus:outline-none focus:ring-1 focus:ring-darkBlue"
+              required
+              />
+          </div>
         </div>
-      </div>
+        <div>
+          <div class="me-4 mb-4">
+            <p class="font-semibold">DESCRIÇÃO</p>
+            <textarea
+              name="body"
+              type="text"
+              class="w-full h-64 p-3 rounded-lg bg-lightBlue/25 border-2 border-lightBlue/25 focus:border-mediumBlue focus:outline-none focus:ring-1 focus:ring-darkBlue"
+              required
+              ></textarea>
+          </div>
+        </div>
+
+        <button
+          class="bg-mediumBlue p-3 rounded-md w-44 hover:bg-darkBlue mb-12"
+          type="submit"
+        >
+          <p class="text-white">Criar Evento</p>
+        </button>
+      </form>
     </div>
   </div>
-
-  <!-- ABA DE EVENTOS -->
-
-  <% } else if(aba === "events") { %>
-  <div class="bg-white ms-4 rounded w-full">
-    <div class="ms-8 me-8 m-auto">
-      <h1 class="mt-4 m-auto text-4xl font-semibold">Eventos</h1>
-      <div class="flex flex-col">
-        <h1 class="mt-14 text-2xl mb-8">Seus Eventos</h1>
-
-        <a href="/account/create-event" class="w-full h-full ">
-          <div class="bg-lightBlue/50 h-48 mb-4">
-         
-            <div class="flex flex-col justify-center h-full items-center">
-                 <h1 class="justify-self-start self-center text-lg">Criar novo evento</h1>
-              <img src="/images/icons/plus.svg" class="h-8 w-8" alt="" />
-            </div>
-          </div>
-        </a>
-
-        <!-- Event card -->
-        <a href="/event" class="w-full h-full flex flex-row mb-4">
-          <img
-            src="/images/backdrops/placeholderEvento.png"
-            alt=""
-            class="me-8"
-          />
-          <div class="overflow-hidden">
-            <h1 class="text-darkBlue text-2xl">[EVENT TITLE]</h1>
-            <p>[EVENT DATE] 31/04</p>
-            <p class="overflow-hidden line-clamp-6 text-ellipsis">
-              [EVENT BODY] Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Quisque accumsan euismod facilisis. Aenean placerat vehicula
-              neque, nec lobortis purus commodo eu. Aenean turpis nulla,
-              fermentum non leo non, scelerisque faucibus lectus. In hac
-              habitasse platea dictumst. Vestibulum cursus sit amet neque vel
-              finibus. Fusce id rutrum urna. Aliquam erat volutpat. Duis
-              ultricies nec urna sit amet pretium. Mauris laoreet, lacus ac
-              finibus ullamcorper, neque sem convallis enim, feugiat vehicula
-              libero massa vitae arcu. Donec vel magna vitae velit accumsan
-              pulvinar blandit a enim. Mauris vel tincidunt mauris, vitae
-              laoreet sapien. Suspendisse potenti. Fusce ut nulla aliquet,
-              mattis odio at, mattis augue. Mauris id ex sit amet mi vulputate
-              accumsan vel eu lacus. Etiam porttitor dolor eu nunc malesuada
-              auctor et eget eros. Vestibulum pellentesque vehicula erat, non
-              molestie orci facilisis et.
-            </p>
-          </div>
-        </a>
-        <!-- Event card -->
-      </div>
-    </div>
-  </div>
-  <% } %>
 </div>

@@ -54,4 +54,8 @@ VALUES ('User',false,false),
        ('Host',true,false),
        ('Admin',true,true);
 
-       
+INSERT INTO event (title, body, eventDate, host_id)
+VALUES ('Event 1', 'Description of event 1', '2023-10-01 10:00:00', 1),
+       ('Event 2', 'Description of event 2', '2023-10-02 11:00:00', 1),
+       ('Event 3', 'Description of event 3', '2023-10-03 12:00:00', 1);
+
