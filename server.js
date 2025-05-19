@@ -7,6 +7,8 @@ const PORT = process.env.PORT || 3000;
 const homeRoutes = require('./routes/home');
 const accountRoutes = require('./routes/account');
 const eventRoutes = require('./routes/event');
+const loginRoutes = require('./routes/login');
+const signupRoutes = require('./routes/signup');
 
 // Middleware para processar JSON
 app.use(express.json());
@@ -29,10 +31,13 @@ app.get("/", (req, res) => {
 app.use('/home', homeRoutes);
 app.use('/account', accountRoutes);
 app.use('/event', eventRoutes);
+app.use('/login', loginRoutes);
+app.use('/signup', signupRoutes);
 
 // Inicializa o servidor
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
   require('child_process').exec(`start http://localhost:${PORT}`); // Abre o navegador automaticamente
 });
+
 
