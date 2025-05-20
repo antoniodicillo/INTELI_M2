@@ -52,22 +52,23 @@
   <!-- ABA DE EVENTOS -->
 
   <% } else if(aba === "events") { %>
-  <div class="bg-white ms-4 rounded w-full">
+  <div class="bg-white ms-4 rounded w-full mb-8">
     <div class="ms-8 me-8 m-auto">
       <h1 class="mt-4 m-auto text-4xl font-semibold">Eventos</h1>
       <div class="flex flex-col">
         <h1 class="mt-14 text-2xl mb-8">Seus Eventos</h1>
 
-        <a href="/account/create-event" class="w-full h-full ">
+        <a href="/account/create-event" class="w-full h-full">
           <div class="bg-lightBlue/50 h-48 mb-4">
-         
             <div class="flex flex-col justify-center h-full items-center">
-                 <h1 class="justify-self-start self-center text-lg">Criar novo evento</h1>
+              <h1 class="justify-self-start self-center text-lg">
+                Criar novo evento
+              </h1>
               <img src="/images/icons/plus.svg" class="h-8 w-8" alt="" />
             </div>
           </div>
         </a>
-          
+        <% events.forEach(event => { %>
         <!-- Event card -->
         <a href="/event" class="w-full h-full flex flex-row mb-4">
           <img
@@ -75,29 +76,17 @@
             alt=""
             class="me-8"
           />
+
           <div class="overflow-hidden">
-            <h1 class="text-darkBlue text-2xl">[EVENT TITLE]</h1>
-            <p>[EVENT DATE] 31/04</p>
+            <h1 class="text-darkBlue text-2xl"><%= event.title%></h1>
+            <p><%= event.formattedDate %></p>
             <p class="overflow-hidden line-clamp-6 text-ellipsis">
-              [EVENT BODY] Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Quisque accumsan euismod facilisis. Aenean placerat vehicula
-              neque, nec lobortis purus commodo eu. Aenean turpis nulla,
-              fermentum non leo non, scelerisque faucibus lectus. In hac
-              habitasse platea dictumst. Vestibulum cursus sit amet neque vel
-              finibus. Fusce id rutrum urna. Aliquam erat volutpat. Duis
-              ultricies nec urna sit amet pretium. Mauris laoreet, lacus ac
-              finibus ullamcorper, neque sem convallis enim, feugiat vehicula
-              libero massa vitae arcu. Donec vel magna vitae velit accumsan
-              pulvinar blandit a enim. Mauris vel tincidunt mauris, vitae
-              laoreet sapien. Suspendisse potenti. Fusce ut nulla aliquet,
-              mattis odio at, mattis augue. Mauris id ex sit amet mi vulputate
-              accumsan vel eu lacus. Etiam porttitor dolor eu nunc malesuada
-              auctor et eget eros. Vestibulum pellentesque vehicula erat, non
-              molestie orci facilisis et.
+              <%= event.body %>
             </p>
           </div>
         </a>
         <!-- Event card -->
+        <% }) %>
       </div>
     </div>
   </div>

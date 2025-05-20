@@ -11,13 +11,21 @@
       <%= theEvent.title %>
     </h1>
     <div class="mt-8 flex flex-row">
-      <div class="rounded-full border-2 border-darkBlue me-8 h-28 w-28 overflow-hidden">
-        <img src="/images/backdrops/placeholderEvento.png" class="w-full h-full object-cover" alt="" />
+      <div
+        class="rounded-full border-2 border-darkBlue me-8 h-28 w-28 overflow-hidden"
+      >
+        <img
+          src="/images/backdrops/placeholderEvento.png"
+          class="w-full h-full object-cover"
+          alt=""
+        />
       </div>
       <div class="flex flex-col">
         <div class="flex flex-row items-center">
           <img src="/images/icons/calendar.svg" class="me-2" alt="" />
-          <h1 class="text-xl text-mediumBlue font-medium"> <%= theEvent.formattedDate %></h1>
+          <h1 class="text-xl text-mediumBlue font-medium">
+            <%= theEvent.formattedDate %>
+          </h1>
         </div>
         <div class="flex flex-row items-center mb-3">
           <img src="/images/icons/clock.svg" class="me-2" alt="" />
@@ -25,15 +33,13 @@
         </div>
         <div class="flex flex-row items-center">
           <img src="/images/icons/location.svg" class="me-2 h-8" alt="" />
-          <h1 class="text-lg">Av. Professor Almeida Prado, 520</h1>
+          <h1 class="text-lg"><%= theEvent.event_location %></h1>
         </div>
       </div>
     </div>
     <div class="mt-4 mb-4">
       <h1 class="text-xl mb-2">Descrição do evento</h1>
-      <p>
-         <%= theEvent.body %>
-      </p>
+      <p><%= theEvent.body %></p>
     </div>
     <button
       class="bg-mediumBlue text-white rounded-lg py-2 px-4 mt-4 mb-4 w-2/6 self-center hover:bg-darkBlue transition duration-300 ease-in-out"

@@ -1,8 +1,13 @@
 const db = require("../config/database");
 
 module.exports = {
-  async findAll() {
-    const result = await db.query("SELECT * FROM event ORDER BY created_at ASC");
+  async findAll(limit) {
+    
+    if(!limit) {
+      limit = 5;
+    }
+
+    const result = await db.query("SELECT * FROM event ORDER BY created_at DESC LIMIT $1", [limit]);
     return result.rows;
   },
 
@@ -11,9 +16,9 @@ module.exports = {
     return result.rows[0];
   },
 
-  async create(title, date, body) {
-    const query = "INSERT INTO event (title,eventdate,body,host_id) VALUES ($1, $2, $3, $4) RETURNING *";
-    const result = await db.query(query, [title, date, body, 1]);
+  async create(title, date, time, location,  body) {
+    const query = "INSERT INTO event (title,eventdate,event_time,event_location,body,host_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *";
+    const result = await db.query(query, [title, date, time, location, body, 1]);
     return result.rows[0];
   },
 
