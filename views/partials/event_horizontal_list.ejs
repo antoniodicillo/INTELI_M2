@@ -1,13 +1,14 @@
+
 <div class="mt-4 mb-12 w-4/6 m-auto flex flex-col">
   <h1 class="text-3xl text-darkBlue font-bold mb-4">Eventos em destaque</h1>
 
   <% events.forEach(event => { %>
   <!--  CARD  -->
-  <a href="/event" class="w-full h-full flex flex-row mb-4">
+  <a href="/event/<%= event.id %>" class="w-full h-full flex flex-row mb-4">
     <img src="/images/backdrops/placeholderEvento.png" alt="" class="me-8" />
     <div class="overflow-hidden">
       <h1 class="text-darkBlue text-2xl"> <%= event.title %> </h1>
-       <%= event.eventdate %>
+       <%= event.formattedDate %>
       <p class="overflow-hidden line-clamp-6 text-ellipsis">
         <%= event.body %>
       </p>

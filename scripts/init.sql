@@ -1,10 +1,12 @@
 CREATE TABLE IF NOT EXISTS event (
   id SERIAL PRIMARY KEY,
+  host_id integer DEFAULT 1,
   title varchar NOT NULL,
   body varchar,
-  eventDate timestamp,
+  eventDate date,
+  event_time time,
+  event_location varchar,
   created_at timestamp DEFAULT NOW(),
-  host_id integer NOT NULL,
   img_path varchar
 );
 
@@ -54,8 +56,13 @@ VALUES ('User',false,false),
        ('Host',true,false),
        ('Admin',true,true);
 
+INSERT INTO users (name,surname,email,role) 
+VALUES ('Filmeet', 'Admin', 'filmeet@filmeet.com', 3);
+
+
 INSERT INTO event (title, body, eventDate, host_id)
-VALUES ('Event 1', 'Description of event 1', '2023-10-01 10:00:00', 1),
-       ('Event 2', 'Description of event 2', '2023-10-02 11:00:00', 1),
-       ('Event 3', 'Description of event 3', '2023-10-03 12:00:00', 1);
+VALUES ('Evento numero 1', 'Um evento muito bom', '2025-10-02', 1),
+       ('Evento numero dos', 'Mmmmmmmmmmmmmmmmmmmm mmmm mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm ', '2025-10-02', 1),
+       ('Evento numero 3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2025-10-03', 1);
+
 

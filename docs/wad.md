@@ -45,54 +45,80 @@ _Posicione aqui a lista de User Stories levantadas para o projeto. Siga o templa
 <img src="../assets/database/modelo-banco.png">
 
 ```sql
-
--- Tabela de cargos dos usuários do sistema
-CREATE TABLE roles (
+-- Cria a tabela eventos se ela não existe
+CREATE TABLE IF NOT EXISTS event (
   id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL,
-  create_Events BOOLEAN, -- Booleana de poder ou não criar eventos no site
-  ban_Members BOOLEAN -- Booleana de poder bloquear o acesso a plataforma para certos usuários
+  host_id integer DEFAULT 1,
+  title varchar NOT NULL,
+  body varchar,
+  eventDate date,
+  event_time time,
+  event_location varchar,
+  created_at timestamp DEFAULT NOW(),
+  img_path varchar
 );
 
--- Tabela dos usuários do sistema
-CREATE TABLE users (
+-- Cria a tabela users se ela não existe
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY UNIQUE,
+  email varchar NOT NULL UNIQUE,
+  name varchar,
+  surname varchar,
+  birth_date date,
+  phone_number integer,
+  role integer NOT NULL,
+  created_at timestamp DEFAULT NOW(),
+  profile_picture_path varchar,
+  banned bool DEFAULT false
+);
+
+-- Cria a tabela de inscrições de um evento
+CREATE TABLE IF NOT EXISTS subscriptions (
   id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL,
-  role INT REFERENCES roles(id) ON DELETE CASCADE,
-  created_at DATE 
+  user_id integer NOT NULL,
+  event_id integer NOT NULL
 );
 
--- Tabela de eventos 
-CREATE TABLE events (
- id SERIAL PRIMARY KEY,
- title TEXT,
- body TEXT,
- event_Date DATE,
- created_at DATE,
- host INT REFERENCES users(id) ON DELETE CASCADE
-);
-
--- Tabela de eventos que um usuário confirmou sua presença
-CREATE TABLE subscriptions (
+-- Cria a tabela de cargos
+CREATE TABLE IF NOT EXISTS roles (
   id SERIAL PRIMARY KEY,
-  user_id INT REFERENCES users(id) ON DELETE CASCADE,
-  event_id INT REFERENCES events(id) ON DELETE CASCADE
+  name varchar NOT NULL,
+  create_events bool NOT NULL, -- Bool que define se o usuário pode criar eventos
+  ban_users bool NOT NULL -- Bool que define se o usuário pode negar o acesso a conta de alguem 
 );
 
-INSERT INTO roles (name, createEvents, banMembers) 
+-- Configura a foreign key do criador do evento para sua tabela na users
+ALTER TABLE event
+  ADD CONSTRAINT fk_host_id FOREIGN KEY (host_id) REFERENCES users(id) ON DELETE SET NULL;
+
+-- Configura a foreign key dos usuários inscritos em um evento
+ALTER TABLE subscriptions
+    ADD CONSTRAINT fk_sub_user_id FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL;
+
+-- Configura a foreign key do evento que um usuário foi inscrito
+ALTER TABLE subscriptions
+    ADD CONSTRAINT fk_event_id FOREIGN KEY (event_id) REFERENCES event(id) ON DELETE SET NULL;
+
+-- Configura a foreign key dos usuários e seus cargos
+ALTER TABLE users
+    ADD CONSTRAINT fk_role_id FOREIGN KEY (role) REFERENCES roles(id) ON DELETE SET NULL;
+
+-- Insere alguns cargos na tabela de cargos
+INSERT INTO roles (name, create_events, ban_users) 
 VALUES ('User',false,false),
        ('Host',true,false),
        ('Admin',true,true);
 
+-- Insere um usuário admin na tabela users
+INSERT INTO users (name,surname,email,role) 
+VALUES ('Filmeet', 'Admin', 'filmeet@filmeet.com', 3);
 
-INSERT INTO users (name, role) 
-VALUES ('Antonio',3);
+-- Cria alguns eventos de exemplo
+INSERT INTO event (title, body, eventDate, host_id)
+VALUES ('Evento numero 1', 'Um evento muito bom', '2025-10-02', 1),
+       ('Evento numero dos', 'Mmmmmmmmmmmmmmmmmmmm mmmm mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm ', '2025-10-02', 1),
+       ('Evento numero 3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2025-10-03', 1);
 
-
-
-
-SELECT * FROM users;
--- SELECT * FROM roles;
 ```
 
 ### 3.1.1 BD e Models (Semana 5)

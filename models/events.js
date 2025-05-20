@@ -2,13 +2,18 @@ const db = require("../config/database");
 
 module.exports = {
   async findAll() {
-    const result = await db.query("SELECT * FROM event ORDER BY title ASC");
+    const result = await db.query("SELECT * FROM event ORDER BY created_at ASC");
     return result.rows;
   },
 
-  async create(title, body, date) {
-    const query = "INSERT INTO event (title,body,eventdate,host_id) VALUES ($1, $2, $3, $4) RETURNING *";
-    const result = await db.query(query, [title, body, date, 1]);
+   async findById(id) {
+    const result = await db.query("SELECT * FROM event WHERE id = $1", [id]);
+    return result.rows[0];
+  },
+
+  async create(title, date, body) {
+    const query = "INSERT INTO event (title,eventdate,body,host_id) VALUES ($1, $2, $3, $4) RETURNING *";
+    const result = await db.query(query, [title, date, body, 1]);
     return result.rows[0];
   },
 

@@ -1,7 +1,7 @@
 const Events = require("../models/events");
 
 exports.create = async (req, res) => {
-  console.log(req.body);
-  await Events.create(req.body);
+  const { title, date, body } = req.body
+  await Events.create(title, date, body);
   res.redirect("/home");
 };

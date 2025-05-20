@@ -1,5 +1,5 @@
 <div class="flex flex-row w-4/6 m-auto mt-8">
-  <div class="bg-white rounded w-full">
+  <div class="bg-white rounded w-full mb-8">
     <div class="ms-8 me-8 m-auto">
       <h1 class="mt-4 m-auto text-4xl font-semibold mb-14">Criar evento</h1>
       <form class="flex flex-col" action="/events" method="POST">
@@ -11,7 +11,7 @@
               type="text"
               class="w-full h-10 p-3 rounded-lg bg-lightBlue/25 border-2 border-lightBlue/25 focus:border-mediumBlue focus:outline-none focus:ring-1 focus:ring-darkBlue"
               required
-              />
+            />
           </div>
           <div class="me-4">
             <p class="font-semibold">DATA</p>
@@ -20,7 +20,7 @@
               type="date"
               class="w-40 h-10 p-3 rounded-lg bg-lightBlue/25 border-2 border-lightBlue/25 focus:border-mediumBlue focus:outline-none focus:ring-1 focus:ring-darkBlue"
               required
-              />
+            />
           </div>
         </div>
         <div>
@@ -30,8 +30,9 @@
               name="body"
               type="text"
               class="w-full h-64 p-3 rounded-lg bg-lightBlue/25 border-2 border-lightBlue/25 focus:border-mediumBlue focus:outline-none focus:ring-1 focus:ring-darkBlue"
+              rows="8"
               required
-              ></textarea>
+            ></textarea>
           </div>
         </div>
 
