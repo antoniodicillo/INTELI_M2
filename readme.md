@@ -7,7 +7,7 @@ Na arquitetura MVC deste projeto de cadastro de alunos, professores e cursos, ca
 
 ### Como ocorre o envio e o recebimento de dados no formato JSON neste projeto? 
 _Cite uma rota que responde em JSON e explique seu funcionamento._  
-Para o envio e recebimento de dados em JSON, uma rota como GET /api/alunos pode ser implementada para retornar a lista de alunos em formato JSON. Nessa rota, o Controller consultaria o Model para buscar os registros da tabela alunos no Supabase e responderia com res.json(alunos), permitindo que aplicações front-end ou sistemas externos consumam esses dados de maneira padronizada.
+Para o envio e recebimento de dados em JSON, uma rota como GET /cursos pode ser implementada para retornar a lista de alunos em formato JSON. Nessa rota, o Controller consultaria o Model para buscar os registros da tabela alunos no Supabase e responderia com res.json(cursos), permitindo que aplicações front-end ou sistemas externos consumam esses dados de maneira padronizada.
 
 ### Qual a importância de usar HTML básico com formulários e tabelas para organizar e manipular dados no navegador? 
 _Por que esse tipo de estrutura ainda é útil em projetos back-end com Node.js?_
