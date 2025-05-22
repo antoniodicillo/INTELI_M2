@@ -5,12 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const homeRoutes = require('./routes/home');
-const accountRoutes = require('./routes/account');
-const eventRoutes = require('./routes/event');
-const loginRoutes = require('./routes/login');
-const signupRoutes = require('./routes/signup');
-const eventsApiRoutes = require('./routes/events');
+const routes = require('./routes/index');
 
 // Middleware para processar JSON
 app.use(express.json());
@@ -32,17 +27,10 @@ app.get("/", (req, res) => {
 });
 
 // Define as rotas
-app.use('/home', homeRoutes);
-app.use('/account', accountRoutes);
-app.use('/event', eventRoutes);
-app.use('/login', loginRoutes);
-app.use('/signup', signupRoutes);
-app.use('/events', eventsApiRoutes);
+app.use('/', routes);
 
 // Inicializa o servidor
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
-  require('child_process').exec(`start http://localhost:${PORT}`); // Abre o navegador automaticamente
+  //require('child_process').exec(`start http://localhost:${PORT}`); // Abre o navegador automaticamente
 });
-
-
