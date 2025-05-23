@@ -42,7 +42,7 @@ _Posicione aqui a lista de User Stories levantadas para o projeto. Siga o templa
 
 ### 3.1. Modelagem do banco de dados (Semana 3)
 
-<img src="../assets/database/modelo-banco.png">
+<img src="../assets/gdd/modelo-banco.png">
 
 ```sql
 -- Cria a tabela eventos se ela não existe
@@ -123,19 +123,94 @@ VALUES ('Evento numero 1', 'Um evento muito bom', '2025-10-02', 1),
 
 ### 3.1.1 BD e Models (Semana 5)
 
-_Descreva aqui os Models implementados no sistema web_
+# Models do Sistema (MVC)
+
+## 1. Model: Event (Evento)
+
+### Atributos:
+- `id`: Chave primária autoincrementável (Serial)
+- `host_id`: ID do organizador (integer, padrão 1)
+- `title`: Título do evento (string obrigatória)
+- `body`: Descrição do evento (string opcional)
+- `eventDate`: Data do evento (tipo Date)
+- `event_time`: Horário do evento (tipo Time)
+- `event_location`: Local do evento (string)
+- `created_at`: Data de criação (timestamp padrão NOW())
+- `img_path`: Caminho da imagem (string opcional)
+
+### Relacionamentos:
+- Pertence a um `User` (organizador via `host_id`)
+- Tem muitas `Subscriptions` (inscrições)
+
+### Validações:
+- Campos obrigatórios: `title`, `eventDate`, `event_time`, `event_location`
+- Formato de data e hora válidos
+
+---
+
+## 2. Model: User (Usuário)
+
+### Atributos:
+- `id`: Chave primária autoincrementável (Serial)
+- `email`: E-mail único (string obrigatória)
+- `name`: Nome (string opcional)
+- `surname`: Sobrenome (string opcional)
+- `birth_date`: Data de nascimento (Date opcional)
+- `phone_number`: Telefone (integer opcional)
+- `role`: Nível de acesso (integer obrigatório)
+- `created_at`: Data de criação (timestamp padrão NOW())
+- `profile_picture_path`: Caminho da foto (string opcional)
+- `banned`: Status de banimento (boolean, padrão false)
+
+### Relacionamentos:
+- Tem muitos `Events` (como organizador)
+- Tem muitas `Subscriptions` (inscrições)
+- Pertence a uma `Role` (via `role`)
+
+### Validações:
+- E-mail único e válido
+- Formato de data de nascimento
+- `role` deve existir na tabela `roles`
+
+---
+
+## 3. Model: Subscription (Inscrição)
+
+### Atributos:
+- `id`: Chave primária autoincrementável (Serial)
+- `user_id`: ID do usuário (integer obrigatório)
+- `event_id`: ID do evento (integer obrigatório)
+
+### Relacionamentos:
+- Pertence a um `User`
+- Pertence a um `Event`
+
+### Validações:
+- Combinação única `user_id` + `event_id`
+- Existência dos registros em `users` e `events`
+
+---
+
+## 4. Model: Role (Cargo)
+
+### Atributos:
+- `id`: Chave primária autoincrementável (Serial)
+- `name`: Nome do cargo (string obrigatória)
+- `create_events`: Permissão para criar eventos (boolean)
+- `ban_users`: Permissão para banir usuários (boolean)
+
+### Relacionamentos:
+- Tem muitos `Users`
+
+### Validações:
+- Nome único
+- Campos booleanos obrigatórios
+
+---
 
 ### 3.2. Arquitetura (Semana 5)
 
-_Posicione aqui o diagrama de arquitetura da sua solução de aplicação web. Atualize sempre que necessário._
-
-**Instruções para criação do diagrama de arquitetura**
-
-- **Model**: A camada que lida com a lógica de negócios e interage com o banco de dados.
-- **View**: A camada responsável pela interface de usuário.
-- **Controller**: A camada que recebe as requisições, processa as ações e atualiza o modelo e a visualização.
-
-_Adicione as setas e explicações sobre como os dados fluem entre o Model, Controller e View._
+<img src="../assets/gdd/diagrama-de-arquitetura.png">
 
 ### 3.3. Wireframes (Semana 03 - opcional)
 
@@ -151,7 +226,12 @@ _Posicione aqui algumas imagens demonstrativas de seu protótipo de alta fidelid
 
 ### 3.6. WebAPI e endpoints (Semana 05)
 
-_Utilize um link para outra página de documentação contendo a descrição completa de cada endpoint. Ou descreva aqui cada endpoint criado para seu sistema._
+
+Método | Rota | Descrição | Tabela
+--- | ---- | -- | -- |
+GET | /event/:id | Pega as informações de um evento | Events
+GET | /api/delete-event/:id | Exclui um evento | Events
+POST | /api/create-event | Cria um evento | Events
 
 ### 3.7 Interface e Navegação (Semana 07)
 

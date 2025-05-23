@@ -2,7 +2,7 @@ const Api = require("../models/api");
 
 // Controlador da rota /
 exports.index = async (req, res) => {
-  const events = await Api.findAll();
+  const events = await Api.findEvents();
   events.forEach((event) => {
     event.formattedDate = new Date(event.eventdate).toLocaleDateString(
       "pt-BR"

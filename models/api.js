@@ -1,7 +1,7 @@
 const db = require("../config/database");
 
 module.exports = {
-  async findAll(limit) {
+  async findEvents(limit) {
     
     if(!limit) {
       limit = 5;

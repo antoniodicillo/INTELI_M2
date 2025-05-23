@@ -1,19 +1,13 @@
 const Api = require("../models/api");
 
-// Controlador da rota /
-exports.index = async (req, res) => {
+exports.create = async (req, res) => {
+  const { title, date, time, location,  body } = req.body
+  await Api.create(title, date, time, location,  body);
+  res.redirect("/home");
+};
+
+exports.delete = async (req, res) => {
   const { id } = req.params;
-
-  const theEvent = await Api.findById(id);
-  theEvent.formattedDate = new Date(theEvent.eventdate).toLocaleDateString(
-    "pt-BR"
-  );
-  if (theEvent.event_time) {
-    theEvent.event_time = theEvent.event_time.slice(0, -3);
-  } 
-
-  res.render("pages/event", {
-    titulo: "Página de um Evento",
-    theEvent,
-  });
+  await Api.delete(id);
+  res.redirect("/home");
 };
