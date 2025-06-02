@@ -12,7 +12,7 @@
         <%= theEvent.title %>
       </h1>
       <form action="/api/delete-event/<%= theEvent.id %>" method="POST">
-        <button onclick="confirm('Você deseja realmente excluir o evento?')" class="bg-darkBlue">
+        <button id="delete-event-btn" onclick="confirm('Você deseja realmente excluir o evento?')" class="bg-darkBlue">
           🗑️
         </button>
       </form>
@@ -57,4 +57,5 @@
       <p class="text-lg">CONFIRMAR PRESENÇA</p>
     </button>
   </div>
+  <script src="/js/deletarEvento.js"></script>
 </div>
