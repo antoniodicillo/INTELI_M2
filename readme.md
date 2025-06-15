@@ -10,13 +10,14 @@ O projeto utiliza Node.js seguindo o padrão MVC e PostgreSQL como banco de dado
 
 ## Requisitos
 
-- Node.js (versão X.X.X)
-- PostgreSQL (versão X.X.X)
+- Node.js (Versão 22.12.0)
 
 ## Instalação
 
 1. **Clonar o repositório:**
 
+Execute os comandos abaixo em uma prompt de comando 
+ 
 ```bash
    git clone https://github.com/antoniodicillo/INTELI_M2
    cd INTELI_M2
