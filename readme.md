@@ -101,11 +101,11 @@ INTELI_M2/
 ## Prints da Interface
 
 Página de home
-<img src="assets/gdd/site1.png" alt="Homepage Filmeet" width="600"/>
+<img src="assets/gdd/site1.png" alt="Homepage Filmeet" />
 Página dos eventos do usuário
-<img src="assets/gdd/site2.png" alt="Lista de Eventos" width="600"/>
+<img src="assets/gdd/site2.png" alt="Lista de Eventos" />
 Página de criação de eventos
-<img src="assets/gdd/site3.png" alt="Detalhes do Evento" width="600"/>
+<img src="assets/gdd/site3.png" alt="Detalhes do Evento" />
 
 
 ## Vídeo de Demonstração
