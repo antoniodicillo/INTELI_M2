@@ -102,10 +102,8 @@ INTELI_M2/
 
 Página de home
 <img src="assets/gdd/site1.png" alt="Homepage Filmeet" width="600"/>
-<br>
 Página dos eventos do usuário
 <img src="assets/gdd/site2.png" alt="Lista de Eventos" width="600"/>
-<br>
 Página de criação de eventos
 <img src="assets/gdd/site3.png" alt="Detalhes do Evento" width="600"/>
 
