@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS roles (
   id SERIAL PRIMARY KEY,
   name varchar NOT NULL,
   create_events bool NOT NULL, -- Bool que define se o usuário pode criar eventos
-  ban_users bool NOT NULL -- Bool que define se o usuário pode negar o acesso a conta de alguem 
+  ban_users bool NOT NULL -- Bool que define se o usuário pode negar o acesso a conta de alguem
 );
 
 -- Configura a foreign key do criador do evento para sua tabela na users
@@ -104,13 +104,13 @@ ALTER TABLE users
     ADD CONSTRAINT fk_role_id FOREIGN KEY (role) REFERENCES roles(id) ON DELETE SET NULL;
 
 -- Insere alguns cargos na tabela de cargos
-INSERT INTO roles (name, create_events, ban_users) 
+INSERT INTO roles (name, create_events, ban_users)
 VALUES ('User',false,false),
        ('Host',true,false),
        ('Admin',true,true);
 
 -- Insere um usuário admin na tabela users
-INSERT INTO users (name,surname,email,role) 
+INSERT INTO users (name,surname,email,role)
 VALUES ('Filmeet', 'Admin', 'filmeet@filmeet.com', 3);
 
 -- Cria alguns eventos de exemplo
@@ -128,6 +128,7 @@ VALUES ('Evento numero 1', 'Um evento muito bom', '2025-10-02', 1),
 ## 1. Model: Event (Evento)
 
 ### Atributos:
+
 - `id`: Chave primária autoincrementável (Serial)
 - `host_id`: ID do organizador (integer, padrão 1)
 - `title`: Título do evento (string obrigatória)
@@ -139,10 +140,12 @@ VALUES ('Evento numero 1', 'Um evento muito bom', '2025-10-02', 1),
 - `img_path`: Caminho da imagem (string opcional)
 
 ### Relacionamentos:
+
 - Pertence a um `User` (organizador via `host_id`)
 - Tem muitas `Subscriptions` (inscrições)
 
 ### Validações:
+
 - Campos obrigatórios: `title`, `eventDate`, `event_time`, `event_location`
 - Formato de data e hora válidos
 
@@ -151,6 +154,7 @@ VALUES ('Evento numero 1', 'Um evento muito bom', '2025-10-02', 1),
 ## 2. Model: User (Usuário)
 
 ### Atributos:
+
 - `id`: Chave primária autoincrementável (Serial)
 - `email`: E-mail único (string obrigatória)
 - `name`: Nome (string opcional)
@@ -163,11 +167,13 @@ VALUES ('Evento numero 1', 'Um evento muito bom', '2025-10-02', 1),
 - `banned`: Status de banimento (boolean, padrão false)
 
 ### Relacionamentos:
+
 - Tem muitos `Events` (como organizador)
 - Tem muitas `Subscriptions` (inscrições)
 - Pertence a uma `Role` (via `role`)
 
 ### Validações:
+
 - E-mail único e válido
 - Formato de data de nascimento
 - `role` deve existir na tabela `roles`
@@ -177,15 +183,18 @@ VALUES ('Evento numero 1', 'Um evento muito bom', '2025-10-02', 1),
 ## 3. Model: Subscription (Inscrição)
 
 ### Atributos:
+
 - `id`: Chave primária autoincrementável (Serial)
 - `user_id`: ID do usuário (integer obrigatório)
 - `event_id`: ID do evento (integer obrigatório)
 
 ### Relacionamentos:
+
 - Pertence a um `User`
 - Pertence a um `Event`
 
 ### Validações:
+
 - Combinação única `user_id` + `event_id`
 - Existência dos registros em `users` e `events`
 
@@ -194,15 +203,18 @@ VALUES ('Evento numero 1', 'Um evento muito bom', '2025-10-02', 1),
 ## 4. Model: Role (Cargo)
 
 ### Atributos:
+
 - `id`: Chave primária autoincrementável (Serial)
 - `name`: Nome do cargo (string obrigatória)
 - `create_events`: Permissão para criar eventos (boolean)
 - `ban_users`: Permissão para banir usuários (boolean)
 
 ### Relacionamentos:
+
 - Tem muitos `Users`
 
 ### Validações:
+
 - Nome único
 - Campos booleanos obrigatórios
 
@@ -226,16 +238,27 @@ _Posicione aqui algumas imagens demonstrativas de seu protótipo de alta fidelid
 
 ### 3.6. WebAPI e endpoints (Semana 05)
 
-
-Método | Rota | Descrição | Tabela
---- | ---- | -- | -- |
-GET | /event/:id | Pega as informações de um evento | Events
-GET | /api/delete-event/:id | Exclui um evento | Events
-POST | /api/create-event | Cria um evento | Events
+| Método | Rota                  | Descrição                        | Tabela |
+| ------ | --------------------- | -------------------------------- | ------ |
+| GET    | /event/:id            | Pega as informações de um evento | Events |
+| GET    | /api/delete-event/:id | Exclui um evento                 | Events |
+| POST   | /api/create-event     | Cria um evento                   | Events |
 
 ### 3.7 Interface e Navegação (Semana 07)
 
-_Descreva e ilustre aqui o desenvolvimento do frontend do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar._
+
+O sistema Filmeet foi desenvolvido utilizando Node.js com Express no backend, seguindo o padrão de arquitetura MVC, e Supabase como solução para banco de dados PostgreSQL e autenticação. O frontend foi construído com HTML, CSS (TailwindCSS) e JavaScript, garantindo responsividade e boa experiência de usuário.
+
+A seguir, prints ilustram as principais telas do sistema:
+
+Página de home
+<img src="../assets/gdd/site1.png" alt="Homepage Filmeet" />
+
+Página dos eventos do usuário
+<img src="../assets/gdd/site2.png" alt="Lista de Eventos" />
+
+Página de criação de eventos
+<img src="../assets/gdd/site3.png" alt="Detalhes do Evento" />
 
 ---
 
@@ -243,13 +266,35 @@ _Descreva e ilustre aqui o desenvolvimento do frontend do sistema web, explicand
 
 ### 4.1 Demonstração do Sistema Web (Semana 8)
 
-_VIDEO: Insira o link do vídeo demonstrativo nesta seção_
-_Descreva e ilustre aqui o desenvolvimento do sistema web completo, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar._
+As principais funcionalidades implementadas incluem:
+
+- Descoberta e visualização de eventos de cinema.
+- Inscrição e gerenciamento de participação em eventos.
+- Recomendações personalizadas de eventos.
+- Integração entre organizadores e participantes.
+- Interface responsiva e intuitiva.
+
+A integração entre backend e banco de dados foi realizada via Supabase, facilitando a autenticação e o gerenciamento dos dados dos usuários e eventos. Scripts automatizados foram criados para inicialização e migração do banco de dados.
+
+O vídeo de demonstração está disponível em: [https://www.youtube.com/watch?v=lp_UU5PkikI](https://www.youtube.com/watch?v=lp_UU5PkikI)
 
 ### 4.2 Conclusões e Trabalhos Futuros (Semana 8)
 
-_Indique pontos fortes e pontos a melhorar de maneira geral._
-_Relacione também quaisquer outras ideias que você tenha para melhorias futuras._
+Durante o desenvolvimento do Filmeet, foi possível aprofundar conhecimentos em integração de autenticação com Supabase, manipulação de banco de dados relacional em ambiente cloud e organização do código em MVC. O uso do padrão MVC facilitou a manutenção e escalabilidade do projeto.
+
+**Pontos que funcionaram bem:**
+
+- Integração entre backend e banco de dados via Supabase.
+- Organização do código em camadas (MVC).
+- Interface responsiva e intuitiva.
+- Scripts automatizados para setup do banco de dados.
+
+**Pontos a melhorar e próximos passos:**
+
+- Melhorar o tratamento de erros e feedback ao usuário.
+- Implementar filtros avançados de eventos e painel administrativo mais completo.
+- Otimizar o desempenho para grandes volumes de dados.
+- Explorar novas funcionalidades, como integração com redes sociais e notificações push.
 
 ## <a name="c5"></a>5. Referências
 
