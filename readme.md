@@ -1,12 +1,29 @@
-# Filmeet - Plataforma de Eventos com MVC e Supabase 
+# Filmeet - Plataforma de Eventos com MVC e Supabase
 
 O Filmeet é uma plataforma web desenvolvida para conectar fãs de cinema a eventos exclusivos, como exibições em drive-ins, encontros com atores e sessões especiais. Construído com arquitetura MVC e utilizando Supabase para banco de dados e autenticação, o projeto oferece uma solução escalável e segura para a descoberta e gestão de eventos cinematográficos.
+
+## Funcionalidades
+
+- Descoberta de eventos de cinema (drive-ins, encontros, sessões especiais)
+- Inscrição e gerenciamento de participação em eventos
+- Recomendações personalizadas de eventos
+- Integração entre organizadores e participantes
+- Interface responsiva e intuitiva
 
 Com a crescente demanda por experiências interativas no universo do entretenimento, o Filmeet surge como uma ferramenta centralizada, permitindo que usuários encontrem eventos relevantes, realizem inscrições e interajam com outros fãs. A aplicação prioriza uma experiência intuitiva, garantindo acesso rápido e responsivo em diferentes dispositivos.
 
 Além de facilitar a conexão entre organizadores e participantes, o sistema integra recursos como recomendações personalizadas, notificações em tempo real e avaliações pós-evento, fortalecendo a comunidade cinematográfica. O Filmeet não apenas simplifica o acesso a experiências exclusivas, mas também se posiciona como um hub digital para fãs que buscam ir além da experiência tradicional de cinema.
 
 O projeto utiliza Node.js seguindo o padrão MVC e PostgreSQL como banco de dados.
+
+## Tecnologias Utilizadas
+
+- Node.js
+- Express.js
+- Supabase (PostgreSQL, autenticação)
+- JavaScript (ES6+)
+- HTML5, CSS3, TailwindCSS
+- Arquitetura MVC
 
 ## Requisitos
 
@@ -23,28 +40,26 @@ O projeto utiliza Node.js seguindo o padrão MVC e PostgreSQL como banco de dado
 ```
 
 2. **Instalar as dependências:**
-    
+
 ```bash
 npm install
 ```
-    
+
 3. **Executar o Projeto**
 
 ```bash
 npm start
 ```
 
-Scripts Disponíveis
--------------------
+## Scripts Disponíveis
 
-* `npm start`: Inicia o servidor Node.js.
-* `npm run dev`: Inicia o servidor com `nodemon`, reiniciando automaticamente após alterações no código.
-* `npm run test`: Executa os testes automatizados.
-* `npm run test:coverage`: Executa os testes e gera um relatório de cobertura de código.
-* `npm run init-db`: Inicia o processo de migrations do banco de dados
+- `npm start`: Inicia o servidor Node.js.
+- `npm run dev`: Inicia o servidor com `nodemon`, reiniciando automaticamente após alterações no código.
+- `npm run test`: Executa os testes automatizados.
+- `npm run test:coverage`: Executa os testes e gera um relatório de cobertura de código.
+- `npm run init-db`: Inicia o processo de migrations do banco de dados
 
-Estrutura de Diretórios
------------------------
+## Estrutura de Diretórios
 
 ```
 INTELI_M2/
@@ -58,7 +73,7 @@ INTELI_M2/
 │   └── database.js
 ├── controllers/           # Lógica de controle das requisições
 ├── docs/                  # Documentação WAD
-├── models/                # Definição de modelos de dados 
+├── models/                # Definição de modelos de dados
 ├── routes/                # Definição das rotas do projeto
 ├── scripts/               # Arquivos de JavaScript públicos
 │   └── init.sql              # SQL utilizado para fazer uma migration
@@ -76,13 +91,29 @@ INTELI_M2/
 ├── package.json           # Gerenciador de dependências do Node.js
 ├── readme.md              # Documentação do projeto (Markdown)
 ├── server.js              # Arquivo principal que inicializa o servidor
-├── rest.http              # Teste de endpoints 
+├── rest.http              # Teste de endpoints
 ├── postcss.config.js      # Configurações do postcss
 └── tailwindconfig.js      # Configurações do tailwindcss
 
 ```
 
-Licença
--------
+## Prints da Interface
+
+<p align="center">
+   Página de home
+  <img src="assets/gdd/site1.png" alt="Homepage Filmeet" width="600"/>
+  <br>
+  Página dos eventos do usuário
+  <img src="assets/gdd/site2.png" alt="Lista de Eventos" width="600"/>
+  <br>
+  Página de criação de eventos
+  <img src="assets/gdd/site3.png" alt="Detalhes do Evento" width="600"/>
+</p>
+
+## Vídeo de Demonstração
+
+[Assista ao vídeo de demonstração do Filmeet](https://www.youtube.com/watch?v=lp_UU5PkikI)
+
+## Licença
 
 Este projeto está licenciado sob a Licença MIT.
