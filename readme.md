@@ -50,10 +50,10 @@ Estrutura de Diretórios
 INTELI_M2/
 │
 ├── assets/                # Arquivos de configuração
-│   └── database/             # Arquivos relacionados ao banco de dados
-│   └── images/               # Imagens estáticas utilizadas no projeto
-│       └── backdrops/               # Imagens de fundo do site
-│       └── icons/                   # Ícones do site
+│   ├── database/          # Arquivos relacionados ao banco de dados
+│   └── images/            # Imagens estáticas utilizadas no projeto
+│       ├── backdrops/     # Imagens de fundo do site
+│       └── icons/         # Ícones do site
 ├── config/                # Arquivos de configuração
 │   └── database.js
 ├── controllers/           # Lógica de controle das requisições
@@ -61,15 +61,15 @@ INTELI_M2/
 ├── models/                # Definição de modelos de dados 
 ├── routes/                # Definição das rotas do projeto
 ├── scripts/               # Arquivos de JavaScript públicos
-│   └── init.sql              # SQL utilizado para fazer uma migration
-│   └── runSQLScript.js       # Script que utiliza o init SQL para fazer a migration
+│   ├── init.sql           # SQL utilizado para fazer uma migration
+│   └── runSQLScript.js    # Script que utiliza o init SQL para fazer a migration
 ├── services/              # Serviços auxiliares do projeto
 ├── styles/                # Arquivos CSS públicos
 ├── tests/                 # Arquivos de testes unitários
 │   └── example.test.js
-├── views/                 # Arquivos de testes unitários
-│   └── pages/                # Arquivos html que compõem as páginas web
-│   └── partials/             # Componentes em html que são utilizados nas pages
+├── views/                 # Arquivos de views HTML
+│   ├── pages/             # Arquivos html que compõem as páginas web
+│   └── partials/          # Componentes em html que são utilizados nas pages
 ├── .gitignore             # Arquivo para ignorar arquivos no Git
 ├── jest.config.js         # Arquivo de configuração do Jest
 ├── package-lock.json      # Gerenciador de dependências do Node.js
